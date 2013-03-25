@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+   id="UrlPlugin"
+   iconfile="url.png"
+   description="Url Plugin"
+   tooltip="This is a plugin to parse url"
+   category="Transform"
+   classname="be.ibridge.kettle.url.UrlInputMeta">
+   <libraries>
+    <library name="kettle-url.jar"/>
+    </libraries>
+    
+   <localized_category>
+     <category locale="en_US">Input</category>
+   </localized_category>
+   <localized_description>
+     <description locale="en_US">Plugin to parse Url</description>
+   </localized_description>
+   <localized_tooltip>
+     <tooltip locale="en_US">This is a plugin to parse Url</tooltip>
+   </localized_tooltip>
+   
+</plugin>
