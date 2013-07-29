@@ -52,9 +52,7 @@ public class UrlInput extends BaseStep implements StepInterface
 		super(stepMeta, stepDataInterface, copyNr, transMeta, trans);
 	}
    
-    private boolean ReadNextString()
-   {
-	   
+    private boolean ReadNextString() throws KettleException {
 	   try {
 		   data.readrow= getRow();  // Grab another row ...
 		   
@@ -108,7 +106,7 @@ public class UrlInput extends BaseStep implements StepInterface
 	   } catch(Exception e) {
 			logError(BaseMessages.getString(PKG, "UrlInput.Log.UnexpectedError", e.toString()));
             if (getStepMeta().isDoingErrorHandling()) {
-                putError(getInputRowMeta(), r, 1, e.toString(), null, "UrlInput002");
+                putError(getInputRowMeta(), data.readrow, 1, e.toString(), null, "UrlInput002");
                 return true;
             }
 			stopAll();
