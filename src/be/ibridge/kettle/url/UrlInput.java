@@ -104,11 +104,11 @@ public class UrlInput extends BaseStep implements StepInterface
 
            data.urlToParse = new URL(fieldValue);
 	   } catch(Exception e) {
-			logError(BaseMessages.getString(PKG, "UrlInput.Log.UnexpectedError", e.toString()));
             if (getStepMeta().isDoingErrorHandling()) {
                 putError(getInputRowMeta(), data.readrow, 1, e.toString(), null, "UrlInput002");
                 return true;
             }
+			logError(BaseMessages.getString(PKG, "UrlInput.Log.UnexpectedError", e.toString()));
 			stopAll();
 			logError(Const.getStackTracker(e));
 			setErrors(1);
